@@ -1,4 +1,5 @@
 """Recommends which type of yoga to practice today"""
+import streamlit as st
 st.title("What yoga?")
 
 st.write("Answer a few questions and get your yoga style recommendation!")
