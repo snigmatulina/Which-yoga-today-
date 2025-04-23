@@ -1,1 +1,49 @@
+"""Recommends which type of yoga to practice today"""
+
+# Styles of yoga 
+hatha = "Hatha yoga"
+vinyasa = "Vinyasa yoga"
+yin = "Yin yoga"
+kundalini = "Kundalini yoga"
+ashtanga = "Ashtanga-vinyasa yoga"
+
+# Collect user attributes to inform our recommendation.
+energy = int(input("From 1(low) to 5(high) how much energy do you have? "))
+speed = input("Would you like a slower or faster practice today? ")
+intention = input("Is your intention to relax, move, breathe or"+
+                " connect with spiritual part? ")
+
+# Make a course recommendation based on the user's attributes.
+rec = "none"
+if energy ==5:
+    if speed == "faster":
+        rec = vinyasa 
+    else: 
+        rec = kundalini
+elif energy == 4:
+    if intention == "breathe":
+        rec = kundalini
+    else:
+        rec = ashtanga
+elif energy == 3:
+    if intention == "move" or intention == "breathe":
+        rec = hatha
+    else:
+        rec == yin
+elif energy == 2:
+    if intention =="connect with spiritual part":
+        rec = kundalini
+    elif intention == "move" or intention == "breathe":
+        rec = hatha
+    else:
+        rec = yin
+else:
+    if speed == "faster":
+        rec = hatha
+    else:
+        rec=yin
+if rec == "none":
+    print("I'm sorry, there might have been an error, try answering again")
+else:
+    print("Try doing " + rec +" today! See how it will go!")
 
