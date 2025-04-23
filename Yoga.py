@@ -1,4 +1,7 @@
 """Recommends which type of yoga to practice today"""
+st.title("What yoga?")
+
+st.write("Answer a few questions and get your yoga style recommendation!")
 
 # Styles of yoga 
 hatha = "Hatha yoga"
@@ -8,10 +11,10 @@ kundalini = "Kundalini yoga"
 ashtanga = "Ashtanga-vinyasa yoga"
 
 # Collect user attributes to inform our recommendation.
-energy = int(input("From 1(low) to 5(high) how much energy do you have? "))
-speed = input("Would you like a slower or faster practice today? ")
-intention = input("Is your intention to relax, move, breathe or"+
-                " connect with spiritual part? ")
+energy = st.selectbox("From 1(low) to 5(high) how much energy do you have?", ["1", "2", "3", "4","5"])
+speed = st.selectbox("Would you like a slower or faster practice today? ", ["slower", "faster"])
+intention = st.selectbox("Is your intention to relax, move, breathe or connect with spiritual part? ", ["relax", "move", "breathe","connect with spiritual part"])
+                
 
 # Make a course recommendation based on the user's attributes.
 rec = "none"
@@ -42,8 +45,8 @@ else:
         rec = hatha
     else:
         rec=yin
-if rec == "none":
-    print("I'm sorry, there might have been an error, try answering again")
-else:
-    print("Try doing " + rec +" today! See how it will go!")
+if st.button("Get My Recommendation!"):
+   st.markdown(f"### Your recommended :\n**{rec}**")
+
+
 
