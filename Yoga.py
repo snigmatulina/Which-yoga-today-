@@ -3,6 +3,7 @@ import streamlit as st
 st.title("What yoga?")
 
 st.write("Answer a few questions and get your yoga style recommendation!")
+st.image("https://nutritionsource.hsph.harvard.edu/wp-content/uploads/2021/11/pexels-yan-krukov-8436601-copy-scaled.jpg", use_container_width=True)
 
 # Styles of yoga 
 hatha = "Hatha yoga"
